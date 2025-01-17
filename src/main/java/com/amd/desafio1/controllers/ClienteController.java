@@ -1,6 +1,6 @@
 package com.amd.desafio1.controllers;
 
-import com.amd.desafio1.dto.CadastroClienteDTO;
+import com.amd.desafio1.dtos.CadastroClienteDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cliente")
-public class ClientesController {
+public class ClienteController {
 
     @PostMapping("cadastroCliente")
     public ResponseEntity<String> cadastroCliente(@Valid @RequestBody CadastroClienteDTO clienteDTO){
