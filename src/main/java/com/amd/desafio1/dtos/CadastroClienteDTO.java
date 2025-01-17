@@ -1,5 +1,6 @@
-package com.amd.desafio1.dto;
+package com.amd.desafio1.dtos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -10,14 +11,12 @@ import java.util.List;
 
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = false)
 public class CadastroClienteDTO {
 
     @NotNull
-    @Min(3)
-    @Max(100)
     public String nome;
     @NotNull
-    @Max(11)
     public String cpf;
     @NotNull
     public String cep;
