@@ -31,7 +31,7 @@ public class ControleExceptions {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenerics(Exception e) {
         logger.error("Erro: Requisição não atende aos padrões exigidos.", e);
-        return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, "Requisição não atende aos padrões exigidos"), HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(HttpStatus.BAD_REQUEST, "Requisição não atende aos padrões exigidos"));
     }
 
 }

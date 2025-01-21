@@ -23,14 +23,6 @@ public class ClienteService {
     private ModelMapper modelMapper;
 
     public List<CadastroClienteDTO> findAll() {
-//        List<CadastroClienteDTO> retorno = new ArrayList<>();
-//
-//        for (Cliente cliente : clienteRepository.findAll()) {
-//            CadastroClienteDTO clienteDTO = modelMapper.map(cliente, CadastroClienteDTO.class);
-//
-//            retorno.add(clienteDTO);
-//        }
-
         return clienteRepository.findAll().stream()
                 .map(entidade -> modelMapper.map(entidade, CadastroClienteDTO.class))
                 .collect(Collectors.toList());
